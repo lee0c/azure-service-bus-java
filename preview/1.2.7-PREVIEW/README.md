@@ -1,6 +1,6 @@
 ## Proxy & WebSocket Support for Azure Service Bus Java SDK
 
-#### To Use (Not working currently):
+#### To Use:
 
 Add the repository to your pom.xml:
 
@@ -8,7 +8,7 @@ Add the repository to your pom.xml:
 <repositories>
     <repository>
       <id>Preview version of Azure Service Bus Java SDK with proxy and WebSocket support.</id>
-      <url>http://raw.github.com/lee0c/azure-service-bus-java/proxy-support-preview/preview/</url>
+      <url>http://raw.github.com/lee0c/azure-service-bus-java/proxy-support-preview/preview/1.2.7-PREVIEW/</url>
     </repository>
   </repositories>
 ```
