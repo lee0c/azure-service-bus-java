@@ -8,7 +8,7 @@ Add the repository to your pom.xml:
 <repositories>
     <repository>
       <id>Preview version of Azure Service Bus Java SDK with proxy and WebSocket support.</id>
-      <url>http://raw.github.com/lee0c/azure-service-bus-java/proxy-support-preview/preview/1.2.7-PREVIEW/</url>
+      <url>http://raw.github.com/lee0c/azure-service-bus-java/proxy-support-preview/snapshots/</url>
     </repository>
   </repositories>
 ```
@@ -19,7 +19,7 @@ And add the dependency to the dependencies section of your pom.sml:
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-servicebus</artifactId>
-    <version>1.2.7-PREVIEW</version>
+    <version>1.2.7-SNAPSHOT</version>
   </dependency>
 ```
 

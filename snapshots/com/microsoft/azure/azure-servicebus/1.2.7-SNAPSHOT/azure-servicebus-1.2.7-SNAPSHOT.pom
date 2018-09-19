@@ -3,6 +3,6 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-servicebus</artifactId>
-    <version>1.2.7-PREVIEW</version>
+    <version>1.2.7-SNAPSHOT</version>
     <description>Preview version of Azure Service Bus Java SDK with proxy and WebSocket support.</description>
 </project>
