@@ -70,13 +70,12 @@ public class TestUtils {
     {
         ClientSettings clientSettings =
                 Util.getClientSettingsFromConnectionStringBuilder(namespaceConnectionStringBuilder);
-        setDefaultProxySelector();
+        setUpDefaultProxySelector();
 
         return clientSettings;
     }
 
-    public static void setDefaultProxySelector() {
-	    // TODO: this needs a less confusing name (not "set") as it doesn't allow the caller to set the default
+    public static void setUpDefaultProxySelector() {
         ProxySelector.setDefault(new ProxySelector() {
             @Override
             public List<Proxy> select(URI uri) {
