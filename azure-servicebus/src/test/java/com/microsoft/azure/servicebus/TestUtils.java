@@ -37,11 +37,9 @@ public class TestUtils {
 
 		// Read proxy settings
         runWithProxy = Boolean.valueOf(System.getenv(RUN_WITH_PROXY_ENV_VAR));
-        if (runWithProxy)
-        {
-            proxyHostName = System.getenv(PROXY_HOSTNAME_ENV_VAR);
-            proxyPort = Integer.valueOf(System.getenv(PROXY_PORT_ENV_VAR));
-        }
+        proxyHostName = System.getenv(PROXY_HOSTNAME_ENV_VAR);
+        proxyPort = System.getenv(PROXY_PORT_ENV_VAR) == null ?
+                        0 : Integer.valueOf(System.getenv(PROXY_PORT_ENV_VAR));
 	}
 	
 	public static URI getNamespaceEndpointURI()
@@ -54,10 +52,9 @@ public class TestUtils {
     public static ClientSettings getClientSettings()
     {
         if (runWithProxy) {
-            return TestUtils.getProxyClientSettings();
-        } else {
-            return Util.getClientSettingsFromConnectionStringBuilder(namespaceConnectionStringBuilder);
+            setDefaultProxySelector();
         }
+        return Util.getClientSettingsFromConnectionStringBuilder(namespaceConnectionStringBuilder);
     }
     
     // AADTokens cannot yet be used for management operations, sent directly to gateway
@@ -66,16 +63,7 @@ public class TestUtils {
         return Util.getClientSettingsFromConnectionStringBuilder(namespaceConnectionStringBuilder);
     }
 
-    public static ClientSettings getProxyClientSettings()
-    {
-        ClientSettings clientSettings =
-                Util.getClientSettingsFromConnectionStringBuilder(namespaceConnectionStringBuilder);
-        setUpDefaultProxySelector();
-
-        return clientSettings;
-    }
-
-    public static void setUpDefaultProxySelector() {
+    private static void setDefaultProxySelector() {
         ProxySelector.setDefault(new ProxySelector() {
             @Override
             public List<Proxy> select(URI uri) {
