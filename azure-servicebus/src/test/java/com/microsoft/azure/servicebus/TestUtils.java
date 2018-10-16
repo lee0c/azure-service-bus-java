@@ -24,7 +24,7 @@ public class TestUtils {
 	private static Boolean runWithProxy;
 	private static String proxyHostName;
 	private static int proxyPort;
-	
+
 	static
 	{
 		// Read connection string
